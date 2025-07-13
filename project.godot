@@ -11,6 +11,6 @@ config_version=5
 [application]
 
 config/name="demo"
-run/main_scene="uid://cnpcpiwjt6uc3"
+run/main_scene="res://ecs_test.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"

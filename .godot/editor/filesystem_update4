@@ -1,0 +1,8 @@
+res://new_script.gd
+res://node_2d.tscn
+res://ecs_test.gd
+res://ecs/core/component.gd
+res://ecs/core/ecs_world.gd
+res://ecs/core/system.gd
+res://ecs/systems/input_system.gd
+res://ecs/systems/render_system.gd
