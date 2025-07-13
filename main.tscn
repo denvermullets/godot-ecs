@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc42eav7mh1q"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_3dwpb"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_3dwpb")
+
+[node name="GameArea" type="Node2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopBar" type="HBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 80.0
+
+[node name="CurrencyLabel" type="Label" parent="UI/TopBar"]
+layout_mode = 2
+text = "Currency: 200"
+add_theme_font_size_override("font_size", 24)
+
+[node name="Spacer" type="Control" parent="UI/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FoodLabel" type="Label" parent="UI/TopBar"]
+layout_mode = 2
+text = "Food: 0"
+add_theme_font_size_override("font_size", 24)
+
+[node name="LeftPanel" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 20.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="ShopLabel" type="Label" parent="UI/LeftPanel"]
+layout_mode = 2
+text = "SHOP"
+horizontal_alignment = 1
+add_theme_font_size_override("font_size", 20)
+
+[node name="BuyAnimalBtn" type="Button" parent="UI/LeftPanel"]
+layout_mode = 2
+text = "Buy Animal (50)"
+custom_minimum_size = Vector2(0, 50)
+
+[node name="BuyFoodBtn" type="Button" parent="UI/LeftPanel"]
+layout_mode = 2
+text = "Buy Food (5)"
+custom_minimum_size = Vector2(0, 50)
+
+[node name="RightPanel" type="VBoxContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = -20.0
+offset_bottom = 200.0
+
+[node name="AnimalLabel" type="Label" parent="UI/RightPanel"]
+layout_mode = 2
+text = "ANIMAL INFO"
+horizontal_alignment = 1
+add_theme_font_size_override("font_size", 20)
+
+[node name="NameLabel" type="Label" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Name: Select an animal"
+
+[node name="HungerLabel" type="Label" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Hunger: "
+
+[node name="HappinessLabel" type="Label" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Happiness: "
+
+[node name="FeedBtn" type="Button" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Feed Animal"
+custom_minimum_size = Vector2(0, 40)
+
+[node name="SweaterBtn" type="Button" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Add Sweater (25)"
+custom_minimum_size = Vector2(0, 40)
+
+[node name="RenameBtn" type="Button" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Rename Animal"
+custom_minimum_size = Vector2(0, 40)
+
+[node name="SellBtn" type="Button" parent="UI/RightPanel"]
+layout_mode = 2
+text = "Sell Animal (25)"
+custom_minimum_size = Vector2(0, 40)
+
+[connection signal="pressed" from="UI/LeftPanel/BuyAnimalBtn" to="." method="_on_buy_animal_pressed"]
+[connection signal="pressed" from="UI/LeftPanel/BuyFoodBtn" to="." method="_on_buy_food_pressed"]
+[connection signal="pressed" from="UI/RightPanel/FeedBtn" to="." method="_on_feed_animal_pressed"]
+[connection signal="pressed" from="UI/RightPanel/SweaterBtn" to="." method="_on_add_sweater_pressed"]
+[connection signal="pressed" from="UI/RightPanel/RenameBtn" to="." method="_on_rename_animal_pressed"]
+[connection signal="pressed" from="UI/RightPanel/SellBtn" to="." method="_on_sell_animal_pressed"]
